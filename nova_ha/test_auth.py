@@ -5,7 +5,7 @@ from auth import get_nova_client
 class AuthTestCase(TestCase):
     def setUp(self):
         pass
-    
+
     def tearDown(self):
         pass
 
