@@ -19,11 +19,11 @@ class AutoEvacuate(object):
         map(self.treat_failed, self.failed_hosts())
 
     def failover(self,vm):
-        print "VM %s on Host %s is to be evacuate..." % (vm.name,vm.hostname())
+        print "Server %s on Host %s is to evacuate..." % (vm.name,vm.hostname())
         try:
             vm.evacuate()
-        except Exception:
-            pass
+        except Exception as e:
+            print "Error({0}): {1}".format(e.errno, e.strerror)
 
     def treat_failed(self,host):
         map(self.failover,
