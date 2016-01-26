@@ -6,10 +6,10 @@ Server.hostname = (lambda self: getattr(self,'OS-EXT-SRV-ATTR:host'))
 from auth import get_nova_client
 
 def main():
-    nova = AutoEvacuate()
+    runner = AutoEvacuate()
     while True:
         time.sleep(5.0)
-        nova.run()
+        runner.run()
 
 class AutoEvacuate(object):
     def __init__(self):
